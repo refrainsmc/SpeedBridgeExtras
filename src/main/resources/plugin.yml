@@ -1,0 +1,8 @@
+name: SpeedBridgeExtras
+version: '${project.version}'
+main: me.james.speedbridgeextras.SpeedBridgeExtras
+depend: [AdvancedReplay, SpeedBridge]
+commands:
+  lastreplay:
+    description: Watch your last replay.
+    usage: /<command>

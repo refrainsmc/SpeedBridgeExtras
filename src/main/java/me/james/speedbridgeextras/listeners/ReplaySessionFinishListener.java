@@ -21,6 +21,7 @@ public class ReplaySessionFinishListener implements Listener {
             player.removeMetadata("currentlyWatching", plugin);
             SpeedBridgeAPI.getGameService().leave(player);
             player.teleport(SpeedBridgeAPI.getLobbyService().getLobbyLocation());
+            player.getInventory().clear();
         }, 2L);
     }
 }

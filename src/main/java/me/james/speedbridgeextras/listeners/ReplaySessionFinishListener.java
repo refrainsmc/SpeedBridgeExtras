@@ -20,8 +20,9 @@ public class ReplaySessionFinishListener implements Listener {
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             player.removeMetadata("currentlyWatching", plugin);
             SpeedBridgeAPI.getGameService().leave(player);
+        }, 1L);
+        Bukkit.getScheduler().runTaskLater(plugin, () -> {
             player.teleport(SpeedBridgeAPI.getLobbyService().getLobbyLocation());
-            player.getInventory().clear();
-        }, 2L);
+        }, 4L);
     }
 }

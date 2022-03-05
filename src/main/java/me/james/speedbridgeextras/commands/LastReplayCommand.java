@@ -4,6 +4,7 @@ import me.james.speedbridgeextras.SpeedBridgeExtras;
 import me.james.speedbridgeextras.methods.CheckReplayExists;
 import me.jumper251.replay.api.ReplayAPI;
 import me.tofpu.speedbridge.api.SpeedBridgeAPI;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -33,6 +34,7 @@ public class LastReplayCommand implements CommandExecutor {
             ReplayAPI.getInstance().stopReplay(player.getName(), false);
             player.setMetadata("currentlyWatching", new FixedMetadataValue(plugin, true));
             SpeedBridgeAPI.getGameService().reset(SpeedBridgeAPI.getUserService().get(player.getUniqueId()));
+            player.getInventory().clear();
             ReplayAPI.getInstance().playReplay(player.getName(), player);
             return true;
         }
